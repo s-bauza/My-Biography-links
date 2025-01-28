@@ -1,7 +1,7 @@
 import reflex as rx
 from link_bio.components.navbar import navbar
-from link_bio.views.header.header import header
-from link_bio.views.links.links import links
+from link_bio.views.header import header
+from link_bio.views.links import links
 from link_bio.components.footer import footer
 import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
@@ -30,11 +30,17 @@ def index() -> rx.Component:
 
 app = rx.App(
     stylesheets=styles.STYLESHEETS,
-    style=styles.BASE_STYLE
+    style=styles.BASE_STYLE,
+    head_components=(
+        rx.script(src="https://www.googletagmanager.com/gtag/js?id=G-FYMYC5EJCN"),
+        rx.script('''window.dataLayer = window.dataLayer || [];
+                     function gtag(){dataLayer.push(arguments);}
+                     gtag('js', new Date());
+                    gtag('config', 'G-FYMYC5EJCN');''')
+    )
 )
 app.add_page(
     index,
     title=('LINKS_BIO_SBH'),
     image='favicon-16x16.png'
 )
-
