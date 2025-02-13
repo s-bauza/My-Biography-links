@@ -10,14 +10,14 @@ def header() -> rx.Component:
         rx.hstack(
             rx.avatar(
                 fallback='SBH',
-                src='llamas.png',
-                size='9',
+                src='/llamas.png',
+                size='7',
             ),
             rx.vstack(
                 rx.heading(
-                    'SANTIAGO BAUZÁ HIRSCHLER',
+                    'Santiago Bauzá Hirschler',
                     color=TextColor.HEADER.value,
-                    size='7',
+                    size='6',
 
                 ),
                 rx.hstack(

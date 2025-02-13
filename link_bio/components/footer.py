@@ -6,7 +6,7 @@ from link_bio.styles.styles import TextColor as TextColor
 def footer() -> rx.Component:
     return rx.vstack(
         rx.image(
-            src='campana.jpg',
+            src='/campana.jpg',
             alt='Campana de fuego'
         ),
         rx.vstack(

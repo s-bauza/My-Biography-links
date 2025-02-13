@@ -1,31 +1,12 @@
 import reflex as rx
-from link_bio.components.navbar import navbar
-from link_bio.views.header import header
-from link_bio.views.links import links
-from link_bio.components.footer import footer
 import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
+from link_bio.pages.index import index
+from link_bio.pages.my_setup import my_setup
 
 
 class State(rx.State):
     ...
-
-
-def index() -> rx.Component:
-    return rx.box(
-        navbar(),
-        rx.center(
-            rx.vstack(
-                header(),
-                links(),
-                max_width=styles.MAX_WIDTH,
-                width='100%',
-                margin_y=Size.DEFAULT.value,
-                padding=Size.BIG.value
-            )
-        ),
-        footer()
-    )
 
 
 app = rx.App(
@@ -38,9 +19,4 @@ app = rx.App(
                      gtag('js', new Date());
                     gtag('config', 'G-FYMYC5EJCN');''')
     )
-)
-app.add_page(
-    index,
-    title=('LINKS_BIO_SBH'),
-    image='favicon-16x16.png'
 )

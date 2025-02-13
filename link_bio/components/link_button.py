@@ -3,7 +3,7 @@ import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size
 
 
-def link_button(tag: str, text: str, sub_text: str, url: str) -> rx.Component:
+def link_button(tag: str, text: str, sub_text: str, url: str,is_external=True) -> rx.Component:
 
     return rx.link(
         rx.button(
@@ -25,6 +25,6 @@ def link_button(tag: str, text: str, sub_text: str, url: str) -> rx.Component:
             width='100%',
         ),
         href=url,
-        is_external=True,
+        is_external=is_external,
         width='100%'
     )

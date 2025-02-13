@@ -1,18 +1,28 @@
 import reflex as rx
+import link_bio.constants as constants
+from link_bio.routes import Route
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
 from link_bio.styles.styles import Size
-import link_bio.constants as constants
 
-def links() -> rx.Component:
+
+def index_links() -> rx.Component:
     return rx.vstack(
         title('DEV'),
         link_button(
-            'github',
+            'github', 
             'GitHub',
             's-bauza',
             constants.GITHUB_URL
         ),
+        #TODO: Future feature projects
+        # link_button(
+        #     'anvil',
+        #     'Projects',
+        #     'My projects 🛠',
+        #     Route.PROYECTS.value,
+        #     is_external=False
+        # ),
         title('Social Media'),
         link_button(
             'linkedin',
@@ -56,6 +66,13 @@ def links() -> rx.Component:
             'Genshin impact',
             'Europe Server UID: 712814271',
             constants.GENSHIN_IMPACT_URL
+        ),
+        title('Resources'),
+        link_button(
+            'computer',
+            'Setup',
+            'My setup',
+            Route.MYSETUP.value,
         ),
         title('Contact'),
         link_button(

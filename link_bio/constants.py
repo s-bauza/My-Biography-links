@@ -15,3 +15,9 @@ GENSHIN_IMPACT_URL = 'https://act.hoyolab.com/app/community-game-records-sea/ind
 
 #CONTACT
 EMAIL = 'santiago.bauza@gmail.com'
+
+# Page Paths
+
+INDEX = '/'
+PROYECTS = '/proyects'
+MYSETUP = '/mysetup'
