@@ -73,6 +73,7 @@ def index_links() -> rx.Component:
             'Setup',
             'My setup',
             Route.MYSETUP.value,
+            False
         ),
         title('Contact'),
         link_button(

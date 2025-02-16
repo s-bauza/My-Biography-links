@@ -9,6 +9,5 @@ def link_icon(tag: str, url: str) -> rx.Component:
         ),
         href=url,
         is_external=True,
-        color=TextColor.BODY.value,
         alt=str(tag),
     )

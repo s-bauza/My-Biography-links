@@ -46,9 +46,7 @@ BASE_STYLE = {
         'font_weight': FontWeight.BOLD.value,
     },
     rx.icon: {
-        '_hover': {
-            'color': color.SECONDARY.value
-        }
+        '_hover': { 'color': TextColor.HEADER.value }
     },
     rx.button: {
         'width': '100%',
@@ -65,6 +63,7 @@ BASE_STYLE = {
         }
     },
     rx.link: {
+       'color': TextColor.BODY.value,
        'text_decoration': 'none',
        '_hover': {}
     }

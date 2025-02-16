@@ -5,7 +5,7 @@ import link_bio.constants as constants
 from link_bio.styles.styles import TextColor as TextColor
 
 
-def header() -> rx.Component:
+def header(details=True) -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -46,10 +46,12 @@ def header() -> rx.Component:
                 ),
             ),
         ),
-        rx.text(
-                "Hi! I'm Santiago, a technology and video game enthusiast. I'm currently working on completing my degree in Technologies for the Information Society while learning new technologies and improving my English to enhance my skills in the industry. My hobbies include playing games like Genshin Impact, watching anime, practicing judo, exploring the mountains with friends and family, and some times sharing content as a creator on Twitch and YouTube. Here, you can find my projects, social media, and more about what I do. Thanks for stopping by!",
-                color=TextColor.BODY.value,
-                padding_top=Size.DEFAULT.value,
+        rx.cond(
+            details,
+                rx.text(
+                    "Hi! I'm Santiago, a technology and video game enthusiast. I'm currently working on completing my degree in Technologies for the Information Society while learning new technologies and improving my English to enhance my skills in the industry. My hobbies include playing games like Genshin Impact, watching anime, practicing judo, exploring the mountains with friends and family, and some times sharing content as a creator on Twitch and YouTube. Here, you can find my projects, social media, and more about what I do. Thanks for stopping by!",
+                    color=TextColor.BODY.value,
+                    padding_top=Size.DEFAULT.value,
+                ),
         ),
-
     )

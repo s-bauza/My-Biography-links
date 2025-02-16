@@ -21,6 +21,7 @@ def my_setup() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
+                header(False),
                 setup_links(),
                 max_width=styles.MAX_WIDTH,
                 width='100%',
