@@ -3,7 +3,7 @@ name: Static Build (Windows)
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -26,6 +26,7 @@ jobs:
         shell: pwsh  # Usa PowerShell Core
         run: |
           Set-ExecutionPolicy Bypass -Scope Process -Force
+          # Ejecutar el script remoto desde la raíz
           .\remote_build.ps1
 
       - name: Commit and Push changes
