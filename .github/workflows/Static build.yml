@@ -1,4 +1,4 @@
-name: Static Build (Windows)
+name: Static Build
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     if: github.repository == 's-bauza/My-Biography-links'
-    runs-on: windows-latest  # Ejecutar en Windows
+    runs-on: ubuntu-latest
 
     permissions:
       contents: write
@@ -22,13 +22,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run PowerShell build script
-        shell: pwsh  # Usa PowerShell Core
+      - name: Run build script
         run: |
-          Set-ExecutionPolicy Bypass -Scope Process -Force
-          # Ejecutar el script remoto desde la raíz
-          .\remote_build.ps1
-
+          chmod +x ./remote_build.sh
+          ./remote_build.sh
+          
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
