@@ -5,6 +5,6 @@ Remove-Item -Recurse -Force public
 reflex init
 $env:API_URL = "https://my-biography-links.up.railway.app" 
 reflex export --frontend-only
-Expand-Archive -Path .\link_bio\frontend.zip -DestinationPath .\public
+Expand-Archive -Path .\frontend.zip -DestinationPath .\public
 Remove-Item -Force frontend.zip
 deactivate
