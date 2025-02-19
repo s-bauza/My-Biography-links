@@ -3,12 +3,7 @@ import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
 from link_bio.pages.index import index
 from link_bio.pages.my_setup import my_setup
-from link_bio.api.api import hello
-
-
-class State(rx.State):
-    ...
-
+from link_bio.api.api import live
 
 app = rx.App(
     stylesheets=styles.STYLESHEETS,
@@ -21,3 +16,5 @@ app = rx.App(
                     gtag('config', 'G-FYMYC5EJCN');''')
     )
 )
+
+app.api.add_api_route('/api/live/{user_name}', live, methods=['GET'])

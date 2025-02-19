@@ -1,4 +1,5 @@
 import reflex as rx
+import link_bio.state.page_state as page_state
 from link_bio.components.navbar import navbar
 from link_bio.views.header import header
 from link_bio.views.my_setup_links import setup_links
@@ -13,7 +14,8 @@ import link_bio.utils as utils
     title=utils.my_setup_title,
     description=utils.my_setup_description,
     image=utils.preview_image,
-    meta=utils.meta
+    meta=utils.meta,
+    on_load=page_state.PasgeState.twitch_live
 )
 def my_setup() -> rx.Component:
     return rx.box(
@@ -21,7 +23,7 @@ def my_setup() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                header(False),
+                header(False,page_state.PasgeState.is_alive),
                 setup_links(),
                 max_width=styles.MAX_WIDTH,
                 width='100%',

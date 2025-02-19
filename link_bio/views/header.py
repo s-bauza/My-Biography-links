@@ -2,10 +2,10 @@ import reflex as rx
 from link_bio.components.link_icon import link_icon
 from link_bio.styles.styles import Size, Spacing
 import link_bio.constants as constants
-from link_bio.styles.styles import TextColor as TextColor
+from link_bio.styles.styles import TextColor, color
 
 
-def header(details=True) -> rx.Component:
+def header(details=True,twitch_live=False) -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -13,6 +13,7 @@ def header(details=True) -> rx.Component:
                 src='/llamas.png',
                 size='7',
             ),
+            
             rx.vstack(
                 rx.heading(
                     'Santiago Bauzá Hirschler',
@@ -37,9 +38,21 @@ def header(details=True) -> rx.Component:
                         'x',
                         constants.X_URL
                     ),
-                    link_icon(
-                        'twitch',
-                        constants.TWITCH_URL
+                    rx.box(  
+                        link_icon(
+                            'twitch',
+                            constants.TWITCH_URL
+                        ),
+                        rx.box(  
+                            width=Size.SMALL.value,  
+                            height=Size.SMALL.value,
+                            background_color=rx.cond(twitch_live, "green", "red"), 
+                            border_radius="50%",  
+                            position="absolute",  
+                            top="65%",  
+                            left="20px",   
+                        ),
+                        position="relative",  
                     ),
                     padding_top=Size.DEFAULT.value,
                     spacing=Spacing.SMALL.value,

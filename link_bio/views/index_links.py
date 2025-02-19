@@ -6,7 +6,7 @@ from link_bio.components.title import title
 from link_bio.styles.styles import Size
 
 
-def index_links() -> rx.Component:
+def index_links(twitch_live=False) -> rx.Component:
     return rx.vstack(
         title('DEV'),
         link_button(
@@ -54,11 +54,24 @@ def index_links() -> rx.Component:
             '@cordico9070',
             constants.YOUTUBE_URL
         ),
-        link_button(
-            'twitch',
-            'Twitch',
-            'cordico',
-            constants.TWITCH_URL
+        rx.box(
+            link_button(
+                'twitch',
+                'Twitch',
+                'cordico',
+                constants.TWITCH_URL
+            ),
+            rx.box(  
+                width=Size.SMALL.value,  
+                height=Size.SMALL.value,
+                background_color=rx.cond(twitch_live, "green", "red"), 
+                border_radius="50%",  
+                position="absolute",  
+                top="57%",  
+                left="41px",   
+            ),
+            position="relative",
+            width='100%',
         ),
         title('Games'),
         link_button(
