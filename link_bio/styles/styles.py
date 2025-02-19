@@ -9,7 +9,8 @@ MAX_WIDTH = '560px'
 
 STYLESHEETS = [
     'https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap',
-    'https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400&display=swap'
+    'https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400&display=swap',
+    'css/styles.css'
     
 ]
 

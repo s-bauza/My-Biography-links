@@ -4,9 +4,11 @@ from link_bio.api.api import live
 
 
 class PasgeState(rx.State):
+    
     is_alive: bool  
     
-    async def twitch_live(self) -> bool:
+    async def twitch_live(self):
         
-        self.is_alive = await live(constants.TWITCH_USER)
+        live_data = await live(constants.TWITCH_USER)
+        self.is_alive = live_data['live']
         
