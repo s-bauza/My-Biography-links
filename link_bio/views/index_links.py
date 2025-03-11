@@ -4,9 +4,10 @@ from link_bio.routes import Route
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
 from link_bio.styles.styles import Size
+from link_bio.state.page_state import PasgeState
 
 
-def index_links(twitch_live=False) -> rx.Component:
+def index_links() -> rx.Component:
     return rx.vstack(
         title('DEV'),
         link_button(
@@ -64,12 +65,13 @@ def index_links(twitch_live=False) -> rx.Component:
             rx.box(  
                 width=Size.SMALL.value,  
                 height=Size.SMALL.value,
-                background_color=rx.cond(twitch_live, "green", "red"), 
+                background_color=rx.cond(PasgeState.live_status.live, "green", "red"), 
                 border_radius="50%",  
                 position="absolute",  
                 top="57%",  
                 left="41px",
-                class_name=rx.cond(twitch_live, "blink", ""),   
+                class_name=rx.cond(PasgeState.live_status.live, "blink", ""),   
+                on_mount=PasgeState.twitch_live
             ),
             position="relative",
             width='100%',

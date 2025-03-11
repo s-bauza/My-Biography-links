@@ -1,6 +1,5 @@
 import reflex as rx
 from link_bio.components.setup_part import setup_part
-from link_bio.routes import Route
 from link_bio.styles import styles
 from link_bio.styles.styles import Size
 

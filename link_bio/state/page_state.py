@@ -1,14 +1,15 @@
 import reflex as rx
 import link_bio.constants as constants
 from link_bio.api.api import live
+from link_bio.models.live import Live
 
 
 class PasgeState(rx.State):
     
-    is_alive: bool  
+    live_status = Live(live=False,title="") 
     
     async def twitch_live(self):
         
-        live_data = await live(constants.TWITCH_USER)
-        self.is_alive = live_data['live']
+       self.live_status = await live(constants.TWITCH_USER)
+       
         

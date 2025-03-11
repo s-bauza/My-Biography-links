@@ -9,4 +9,3 @@ class Color(Enum):
 class TextColor(Enum):
     HEADER = '#FFD700'
     BODY = '#FFE08A'
-    FOOTER = '#FF4500'

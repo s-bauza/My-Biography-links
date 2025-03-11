@@ -1,5 +1,4 @@
 import reflex as rx
-import link_bio.state.page_state as page_state
 from link_bio.components.navbar import navbar
 from link_bio.views.header import header
 from link_bio.views.index_links import index_links
@@ -17,7 +16,6 @@ from link_bio.routes import Route
     description=utils.index_description,
     image=utils.preview_image,
     meta=utils.meta,
-    on_load=page_state.PasgeState.twitch_live
 )
 def index() -> rx.Component:
     return rx.box(
@@ -25,8 +23,8 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                header(True,page_state.PasgeState.is_alive),
-                index_links(page_state.PasgeState.is_alive),
+                header(True),
+                index_links(),
                 max_width=styles.MAX_WIDTH,
                 width='100%',
                 margin_y=Size.DEFAULT.value,

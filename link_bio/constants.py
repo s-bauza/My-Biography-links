@@ -23,4 +23,4 @@ PROYECTS = '/proyects'
 MYSETUP = '/mysetup'
 
 # Twitch
-TWITCH_USER = 'Cordico'
+TWITCH_USER = 'cordico'#'Cordico'
