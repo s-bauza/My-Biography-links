@@ -6,4 +6,5 @@ config = rx.Config(
         "http://localhost:3000/",
         "https://sbh-links-web.vercel.app/"
         ],
+    debug=False,
 )
