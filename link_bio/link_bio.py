@@ -3,6 +3,7 @@ import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
 from link_bio.pages.index import index
 from link_bio.pages.my_setup import my_setup
+from link_bio.pages.animeflv_info import animeflv_info
 from link_bio.api.api import live
 
 app = rx.App(

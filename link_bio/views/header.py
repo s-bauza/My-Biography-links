@@ -43,24 +43,26 @@ def header(details=True) -> rx.Component:
                         constants.X_URL,
                         'x',
                     ),
-                    rx.box(  
+                    rx.box(
                         link_icon(
                             'twitch',
                             constants.TWITCH_URL,
                             'twitch',
                         ),
-                        rx.box(  
-                            width=Size.SMALL.value,  
+                        rx.box(
+                            width=Size.SMALL.value,
                             height=Size.SMALL.value,
-                            background_color=rx.cond(PasgeState.live_status.live, "green", "red"), 
-                            border_radius="50%",  
-                            position="absolute",  
-                            top="65%",  
-                            left="20px",   
-                            class_name=rx.cond(PasgeState.live_status.live, "blink", ""),
+                            background_color=rx.cond(
+                                PasgeState.live_status.live, "green", "red"),
+                            border_radius="50%",
+                            position="absolute",
+                            top="65%",
+                            left="20px",
+                            class_name=rx.cond(
+                                PasgeState.live_status.live, "blink", ""),
                             on_mount=PasgeState.twitch_live
                         ),
-                        position="relative",  
+                        position="relative",
                     ),
                     padding_top=Size.DEFAULT.value,
                     spacing=Spacing.SMALL.value,
@@ -69,10 +71,10 @@ def header(details=True) -> rx.Component:
         ),
         rx.cond(
             details,
-                rx.text(
-                    "Hi! I'm Santiago, a technology and video game enthusiast. I'm currently working on completing my degree in Technologies for the Information Society while learning new technologies and improving my English to enhance my skills in the industry. My hobbies include playing video games like Genshin Impact, watching anime, doing judo, exploring the mountains with friends and family, and some times sharing content as a creator on Twitch and YouTube. Here, you can find my projects, social media, and more about what I do. Thanks for stopping by!",
-                    color=TextColor.BODY.value,
-                    padding_top=Size.DEFAULT.value,
-                ),
+            rx.text(
+                "Hi! I'm Santiago, a technology and video game enthusiast. I'm currently working on completing my degree in Technologies for the Information Society while learning new technologies and improving my English to enhance my skills in the industry. My hobbies include playing video games like Genshin Impact, watching anime, doing judo, exploring the mountains with friends and family, and some times sharing content as a creator on Twitch and YouTube. Here, you can find my projects, social media, and more about what I do. Thanks for stopping by!",
+                color=TextColor.BODY.value,
+                padding_top=Size.DEFAULT.value,
+            ),
         ),
     )

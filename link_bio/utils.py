@@ -23,3 +23,9 @@ meta=[
 my_setup_title = 'My SetUp'
 my_setup_description = 'My SetUp DESCRIPTION'
 my_setup_image = '/favicon-16x16.png'
+
+#Animeflv_info page
+
+animeflv_info_title = 'Animeflv Info'
+animeflv_info_description = 'Animeflv Info DESCRIPTION'
+animeflv_info_image = '/favicon-16x16.png'

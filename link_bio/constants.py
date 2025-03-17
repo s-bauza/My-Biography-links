@@ -21,6 +21,8 @@ EMAIL = 'santiago.bauza@gmail.com'
 INDEX = '/'
 PROYECTS = '/proyects'
 MYSETUP = '/mysetup'
+ANIMEFLV = '/animeflv'
+
 
 # Twitch
 TWITCH_USER = 'cordico'#'Cordico'

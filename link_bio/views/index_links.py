@@ -16,6 +16,13 @@ def index_links() -> rx.Component:
             's-bauza',
             constants.GITHUB_URL
         ),
+        link_button(
+            'file-search', 
+            'Animeflv info',
+            'test',
+            Route.ANIMEFLV.value,
+            False
+        ),
         #TODO: Future feature projects
         # link_button(
         #     'anvil',
