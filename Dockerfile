@@ -1,4 +1,4 @@
-FROM python:3.11 as init
+FROM python:3.12 as init
 
 WORKDIR /app
 COPY . .
