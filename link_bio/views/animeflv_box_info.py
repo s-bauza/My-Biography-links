@@ -43,12 +43,12 @@ def animeflv_box_info_page():
                     size=Spacing.MEDIUM_SMALL.value,
                     on_change=PasgeState.set_anime_type,
                 ),
-
-                rx.button(
-                    'Search',
-                    on_click=PasgeState.get_animes,
-                    width='13%',
-                    disabled=PasgeState.name == "",
+                rx.box(
+                    rx.button(
+                        'Search',
+                        on_click=PasgeState.get_animes,
+                        disabled=PasgeState.name == "",
+                    ),
                 ),
                 rx.cond(
                     PasgeState.loading,
